@@ -1,4 +1,4 @@
-This folder contains the sample code of NeRF-LEBM using MCMC inference on Carla dataset. It is used for AISTATS submission supplementary only. Other codes will come soon.
+This folder contains the sample code of NeRF-LEBM using MCMC inference on Carla dataset.
 
 1. Install the environment:
 To run the code, one can follow the environment installation instruction of the official code of GRAF，the github link is here https://github.com/autonomousvision/graf
@@ -12,3 +12,5 @@ One can run the code with the following command:
 python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr="localhost" --master_port=13477 train_nerf_lebm.py
 
 4. The code will save its output to ./logs/carla. It will save checkpoint under ./logs/carla/ckpts and synthesis images in ./logs/carla/imgs
+
+5. Pretrained checkpoint can be downloaded here https://drive.google.com/file/d/1eeo8n8zkd8C0M2IvN2eW0AhEVqQzUSeo/view?usp=share_link
