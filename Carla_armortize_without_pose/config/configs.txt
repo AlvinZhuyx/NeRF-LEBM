@@ -1,0 +1,44 @@
+expname = carla_no_pose
+basedir = ./logs
+datadir = ./data/carla
+dataset_type = carla
+
+no_batching = True
+
+use_viewdirs = True
+lrate_decay = 500
+im_size = 64
+batch_size = 8
+netwidth = 256
+netwidth_fine = 256
+n_views = 1
+N_samples = 64
+N_importance = 0
+N_rand = 8192
+chunk = 8192
+netchunk = 524288
+g_l_steps = 30
+e_l_steps = 60
+update_steps = 1
+e_l_step_size = 0.5
+g_l_step_size = 0.5
+g_llhd_sigma = 0.05
+g_llhd_sigma_start = 0.2
+
+sigma = 1.0
+z_app_dim = 128
+z_shape_dim = 128
+i_print = 100
+i_sample = 2000
+i_testset = 2000
+i_test = 10000
+i_weights = 20000
+warm_up_steps = 100
+ptype = ebm
+ptype_app = ebm
+ebm_act = swish
+lrate = 3e-5
+lrate_pose = 3e-5
+lrate_infer = 5e-6
+lrate_ebm = 7e-6
+train = True
