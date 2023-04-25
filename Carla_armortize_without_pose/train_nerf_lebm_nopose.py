@@ -455,7 +455,7 @@ def config_parser():
 
     import configargparse
     parser = configargparse.ArgumentParser()
-    parser.add_argument('--config', is_config_file=True, type=str, default='./configs/config.txt',
+    parser.add_argument('--config', is_config_file=True, type=str, default='./config/configs.txt',
                         help='config file path')
     parser.add_argument("--expname", type=str, 
                         help='experiment name')
