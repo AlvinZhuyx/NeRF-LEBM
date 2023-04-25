@@ -690,18 +690,16 @@ def train(args):
     #for i in trange(start, args.n_epochs):
     for i in range(start + 1, args.n_epochs):
         train_sampler.set_epoch(i)
-        for imgs, poses, idx in dataloader:
+        for imgs, _, idx in dataloader:
             for param_group in optimizer_inference.param_groups:
                 param_group['lr'] = min(max(0, global_step - args.warm_up_steps) / 10000., 1.0) * args.lrate_infer
 
             imgs = imgs.cuda(non_blocking=True) # imgs should in shape (N, n_views, 3, H, W)
-            poses = poses.cuda(non_blocking=True) # poses should in shape (N, n_views, 4, 4)
             poses_infer, KL_pose, theta_pred, phi_pred, pose_h = pose_estimator(torch.reshape(imgs, (-1, 3, H, W)), use_sample=True, return_angle=True)
             
             b_sz = imgs.shape[0]
             imgs = torch.reshape(imgs, (b_sz * args.n_views, 3, H, W))
             imgs_clone = imgs.clone().detach()
-            poses = torch.reshape(poses, (b_sz * args.n_views, 4, 4))
             idx = idx.cuda(non_blocking=True)
             idx = torch.squeeze(idx)
 
