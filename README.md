@@ -5,3 +5,4 @@ This site is still under construction. Currently the code for Carla with MCMC in
 Other codes are under construction and will be ready soon.
 
 Some codes adapted from [this](https://github.com/yenchenlin/nerf-pytorch) awesome pytorch implementation of NeRF  
+For implementing the experiments for training without ground truth camera pose, we use [this](https://github.com/nicola-decao/s-vae-pytorch) fabulous implementation of S-VAE. 
