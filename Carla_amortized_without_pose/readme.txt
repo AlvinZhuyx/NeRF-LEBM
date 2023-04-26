@@ -1,4 +1,4 @@
-This folder contains the sample code of NeRF-LEBM on Carla dataset without ground truth camera pose. We use armortized inference for both latent vectors and camera pose.
+This folder contains the sample code of NeRF-LEBM on Carla dataset without ground truth camera pose. We use amortized inference for both latent vectors and camera pose.
 
 1. Install the environment:
 To run the code, we recommend to follow the environment installation instruction of the official code of GRAF，the github link is here https://github.com/autonomousvision/graf
@@ -12,6 +12,9 @@ In this setting, the model will actually discard the ground truth information du
 3. Run the code, the code is designed to be run on multiple gpus parallelly, in our experiment, we use 2 gpus.
 One can run the code with the following command: 
 python -m torch.distributed.launch --nproc_per_node=2 --nnodes=1 --node_rank=0 --master_addr="localhost" --master_port=13477 train_nerf_lebm_nopose.py
+
+Run the testing code for generating samples:(please do this after you download checkpoint according to step 5 and put it under ./logs/carla_no_pose/ckpts)
+python -m torch.distributed.launch --nproc_per_node=1 --nnodes=1 --node_rank=0 --master_addr="localhost" --master_port=13477 test_nerf_lebm_nopose.py
 
 4. The code will save its output to ./logs/carla_no_pose. It will save checkpoint under ./logs/carla_no_pose/ckpts and synthesis images in ./logs/carla_no_pose/imgs
 
