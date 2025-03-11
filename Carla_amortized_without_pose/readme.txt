@@ -18,4 +18,4 @@ python -m torch.distributed.launch --nproc_per_node=1 --nnodes=1 --node_rank=0 -
 
 4. The code will save its output to ./logs/carla_no_pose. It will save checkpoint under ./logs/carla_no_pose/ckpts and synthesis images in ./logs/carla_no_pose/imgs
 
-5. Pre-trained checkpoint can be downloaded here https://drive.google.com/file/d/1buf-jlEFRmnm37z1Z_x4VkYczAj2uJ_R/view?usp=share_link
+5. Pre-trained checkpoint can be downloaded here https://drive.google.com/file/d/1oGXgqAkqHEY-pv15N9eayekAKbr-_SwN/view?usp=sharing
